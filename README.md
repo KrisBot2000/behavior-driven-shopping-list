@@ -31,8 +31,8 @@ The tests should describe the following shopping list functionality:
 
 #### ShoppingListItem
 
-- ShoppingListItem is a class
-- ShoppingListItem has a property named `name`
+- X - ShoppingListItem is a class
+- X - ShoppingListItem has a property named `name`
 - ShoppingListItem has a property named `description`
 - ShoppingListItem has a property named `is_done`
 - ShoppingListItem has a constructor method that accepts 2 arguments, `name` and `description`

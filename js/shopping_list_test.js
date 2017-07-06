@@ -34,4 +34,11 @@ describe('ShoppingListItem', function (){
       expect(newItem.uncheck()).to.equal(false);
   });
 
+  it('should have a render method with a bunch of html stuff in a string', function (){
+    
+    newItem.uncheck();
+
+    expect(newItem.render()).to.equal('<li class="completed_false"><span>pencil</span> <span>something to write with</span></li>');
+  });
+
 });

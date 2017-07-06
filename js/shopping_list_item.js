@@ -8,6 +8,14 @@ class ShoppingListItem {
   }
 
   check(){
-    return this.is_done = true;
+    this.is_done = true;
+    return this.is_done;
+  }
+
+  uncheck(){
+    if(this.is_done === true){
+      this.is_done = false;
+    }
+    return this.is_done;
   }
 }

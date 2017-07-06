@@ -24,7 +24,10 @@ describe('ShoppingListItem', function (){
 
   it('should have an is_done property', function (){
     expect(newItem.is_done).to.equal(false);
+  });
 
+  it('should have a check method that once called by the instance, changes the instance\'s is_done property to true', function (){
+    expect(newItem.check()).to.equal(true);
   });
 
 });

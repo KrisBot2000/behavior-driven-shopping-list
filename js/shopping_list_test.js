@@ -30,4 +30,8 @@ describe('ShoppingListItem', function (){
     expect(newItem.check()).to.equal(true);
   });
 
+  it('should have an uncheck method that once called by the instance, changes the instances\'s is_done property to false', function(){
+      expect(newItem.uncheck()).to.equal(false);
+  });
+
 });

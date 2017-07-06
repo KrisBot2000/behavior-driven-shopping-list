@@ -22,4 +22,9 @@ describe('ShoppingListItem', function (){
     expect(newItem.description).to.equal('something to write with');
   });
 
+  it('should have an is_done property', function (){
+    expect(newItem.is_done).to.equal(false);
+
+  });
+
 });

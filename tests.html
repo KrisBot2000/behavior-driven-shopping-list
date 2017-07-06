@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.4.2/mocha.min.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.4.2/mocha.min.css" type="text/css" media="all">
 </head>
 <body>
+  <!-- <h1>Hello world!</h1> -->
   <div id="mocha"></div>
 
-  <script src="app.js" charset="utf-8"></script>
-  <script src="shopping_list.js" charset="utf-8"></script>
-  <script src="shopping_list_item.js" charset="utf-8"></script>
-  <script src="shopping_list_test.js" charset="utf-8"></script>
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.4.2/mocha.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.0.2/chai.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.0.2/chai.min.js"></script>
 
-   <script charset="utf-8">
-      mocha.setup('bdd');
-    </script>
+  <script charset="utf-8">
+    mocha.setup('bdd');
+  </script>
 
-   <script src="js/shopping_list_test.js" charset="utf-8"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+  <script src="js/shopping_list.js" charset="utf-8"></script>
+  <script src="js/shopping_list_item.js" charset="utf-8"></script>
+  <script src="js/shopping_list_test.js" charset="utf-8"></script>
 
-   <script charset="utf-8">
-      mocha.run();
-    </script>
+  <script charset="utf-8">
+    mocha.run();
+  </script>
+
+
 </body>
 </html>

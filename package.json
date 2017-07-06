@@ -2,9 +2,9 @@
   "name": "behavior-driven-shopping-list",
   "version": "1.0.0",
   "description": "Fork and clone this project.   Goal: Create a working, single page app.",
-  "main": "index.js",
+  "main": "shopping_list_test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test --watch --bail"
   },
   "repository": {
     "type": "git",

@@ -35,9 +35,26 @@ contentDiv.appendChild(addButton);
 
 addButton.addEventListener('click', add_to_shopping_list);
 
+listDiv = document.createElement('div');
+listDiv.id = 'List_Container';
+contentDiv.appendChild(listDiv);
+
 function add_to_shopping_list(itemName, description){
   if (itemInput.value !== null && itemInput.value !== undefined && itemInput.value !== ''){
     var newItem = new ShoppingListItem(itemInput.value, descripInput.value);
     myList.addItem(newItem);
+    var rowDiv = document.createElement('div');
+    listDiv.appendChild(rowDiv);
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    rowDiv.appendChild(checkbox);
+    newLi = document.createElement('li');
+    rowDiv.appendChild(newLi);
+
   }
+  itemInput.value = '';
+  descriptInput.value = '';
 }
+
+
+

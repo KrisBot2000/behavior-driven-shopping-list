@@ -18,6 +18,10 @@ describe('ShoppingListItem', function (){
     expect(newItem.name).to.equal('pencil');
   });
 
+  it('name should be a string', function(){
+    expect(newItem.name).to.be.a('string');
+  });
+
   it('should have a description property', function (){
     expect(newItem.description).to.equal('something to write with');
   });
@@ -35,10 +39,56 @@ describe('ShoppingListItem', function (){
   });
 
   it('should have a render method with a bunch of html stuff in a string', function (){
-    
+
     newItem.uncheck();
 
     expect(newItem.render()).to.equal('<li class="completed_false"><span>pencil</span> <span>something to write with</span></li>');
   });
+
+});
+
+
+
+describe('ShoppingList', function (){
+
+  var newList;
+
+  beforeEach(function(){
+    newList = new ShoppingList();
+  })
+
+  it('should be a class (function) ;) ', function (){
+    expect(ShoppingList).to.be.a('function');
+  });
+
+  it('should have an "items" property', function(){
+    expect(newList.items).to.deep.equal([]);
+  });
+
+
+  it('should throw an error if item is not a ShoppingListItem', function(){
+
+    var item = new ShoppingListItem('pencil','#2');
+
+    //expect(error)to.be('thrown');
+
+
+
+
+  });
+
+
+
+  it('should add new item to array of items', function(){
+
+    var item = new ShoppingListItem('pencil','#2');
+
+    newList.addItem(item);
+
+    expect(newList.items[0]).to.be.deep.equal(item);
+  });
+
+
+
 
 });

@@ -8,7 +8,9 @@ class ShoppingListItem {
   }
 
   check(){
-    this.is_done = true;
+    if(this.is_done === false){
+      this.is_done = true;
+    }
     return this.is_done;
   }
 

@@ -16,8 +16,6 @@ class ShoppingList {
   }
 
   removeItem(singleItem){
-    // if(singleItem instanceof ShoppingListItem){
-      // if(this.items.length>0){
     if (this.items.indexOf(singleItem) > -1){
       this.items.splice((this.items.indexOf(singleItem)),1);
     } else {

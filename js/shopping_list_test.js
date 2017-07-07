@@ -18,6 +18,8 @@ describe('ShoppingListItem', function (){
     expect(newItem.name).to.equal('pencil');
   });
 
+
+
   it('name should be a string', function(){
     expect(newItem.name).to.be.a('string');
   });

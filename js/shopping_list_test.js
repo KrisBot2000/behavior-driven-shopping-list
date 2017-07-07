@@ -35,7 +35,7 @@ describe('ShoppingListItem', function (){
   });
 
   it('should have an uncheck method that once called by the instance, changes the instances\'s is_done property to false', function(){
-      expect(newItem.uncheck()).to.equal(false);
+    expect(newItem.uncheck()).to.equal(false);
   });
 
   it('should have a render method with a bunch of html stuff in a string', function (){
@@ -61,34 +61,60 @@ describe('ShoppingList', function (){
     expect(ShoppingList).to.be.a('function');
   });
 
-  it('should have an "items" property', function(){
+  it('should have an "items" property that is initialized to an empty array', function(){
     expect(newList.items).to.deep.equal([]);
   });
 
+  describe('addItem method', function (){
+    it('addItem should be a method of the ShoppingList class', function (){
+      expect(newList.addItem).to.be.a('function');
+    });
 
-  it('should throw an error if item is not a ShoppingListItem', function(){
+    it('should throw an error if item passed in as a parameter to addItem is not a ShoppingListItem', function(){
+      expect(function () { newList.addItem('dog');}).to.throw();
+    });
 
-    var item = new ShoppingListItem('pencil','#2');
+    it('method addItem should add new item to array of items', function(){
 
-    //expect(error)to.be('thrown');
+      var item = new ShoppingListItem('pencil','#2');
 
+      newList.addItem(item);
 
-
-
+      expect(newList.items[0]).to.be.deep.equal(item);
+    });
   });
 
+  describe('removeItem method', function (){
+    it('removeItem should be a method of the ShoppingList class', function (){
+      expect(newList.removeItem).to.be.a('function');
+    });
 
+    it('should return an error if item passed in is not on the list', function (){
+      expect(function () { newList.removeItem('cat'); }).to.throw();
+    });
+    var myList = new ShoppingList();
+    var pen = new ShoppingListItem('pen', 'good for to writing with');
+    myList.addItem(pen);
+    myList.removeItem(pen);
 
-  it('should add new item to array of items', function(){
+    it('should remove the item from the items array of the ShoppingList', function (){
+      expect(newList.items.indexOf(pen)).to.equal(-1);
+    });
 
-    var item = new ShoppingListItem('pencil','#2');
+    var apples = new ShoppingListItem('green apples', 'for to eatings');
+    myList.addItem(apples);
+    myList.removeItem();
 
-    newList.addItem(item);
+    it ('should remove the item added most recently from the array if no item was passed in', function () {
+      expect(myList.items.indexOf(apples)).to.equal(-1);
+    });
 
-    expect(newList.items[0]).to.be.deep.equal(item);
+    var anotherList = new ShoppingList();
+    anotherList.removeItem();
+
+    it ('should do nothing if there is nothing in the items array already', function (){
+      expect(anotherList.items).to.deep.equal([]);
+    });
+
   });
-
-
-
-
 });

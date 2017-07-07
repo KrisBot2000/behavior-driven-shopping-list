@@ -1,5 +1,7 @@
 /* jshint esversion: 6 */
 
+var myList = new ShoppingList();
+
 var title = document.createElement("h1");
 title.innerHTML = "My Shopping List";
 
@@ -7,12 +9,35 @@ var contentDiv = document.getElementById("content");
 
 contentDiv.appendChild(title);
 
-var addButton = document.createElement("BUTTON");
+var form = document.createElement("form");
+
+var itemLabel = document.createElement('label');
+itemLabel.innerHTML = 'Item';
+var itemInput = document.createElement('input');
+itemInput.type = 'text';
+
+var descripLabel = document.createElement('label');
+descripLabel.innerHTML = 'Description';
+var descripInput = document.createElement('input');
+descripInput.type = 'text';
+
+
+contentDiv.appendChild(form);
+form.appendChild(itemLabel);
+form.appendChild(itemInput);
+form.appendChild(descripLabel);
+form.appendChild(descripInput);
+
+var addButton = document.createElement("button");
 var text = document.createTextNode("ADD ITEM");
 addButton.appendChild(text);
 contentDiv.appendChild(addButton);
 
-var itemForm = document.createElement("FORM");
-var formName = document.createTextNode("")
+addButton.addEventListener('click', add_to_shopping_list);
 
-
+function add_to_shopping_list(itemName, description){
+  if (itemInput.value !== null && itemInput.value !== undefined && itemInput.value !== ''){
+    var newItem = new ShoppingListItem(itemInput.value, descripInput.value);
+    myList.addItem(newItem);
+  }
+}

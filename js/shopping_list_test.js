@@ -6,6 +6,8 @@ var expect = chai.expect;
 var should = chai.should();
 
 
+
+
 describe('ShoppingListItem', function (){
 
   var newItem = new ShoppingListItem('pencil', 'something to write with');
